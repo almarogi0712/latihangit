@@ -1,2 +1,6 @@
 Muhammad Aftabuddin
+<<<<<<< HEAD
 Githa Refina
+=======
+Eka Prasetyo Ariefin
+>>>>>>> 093dfdac02639440387b2aa8c44f97a5a16b4ca8
