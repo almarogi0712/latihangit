@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+    <link href="assets/css/carousel.css" rel="stylesheet">
+
+    <title>Anime Facts</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Anime Facts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row justify-content-between" id="content">
+          
+        </div>
+      </div>
+    
+    
+      <!-- FOOTER -->
+      <footer class="container">
+        <div class="row align-items-start">
+          <div class="col-5">
+            <h5 style="color: aqua">Kantor Pusat PT Bank BCA Syariah</h5>
+            <p>Jalan Jatinegara Timur No.72</p>
+            <p>Jakarta Timur 13310</p>
+          </div>
+          <div class="col-7">
+            <img src="img/ayo-bank.png" alt="">
+            <img src="img/ekonomi-syariah.png" alt="">
+            <img src="img/ib-perbankan.jpg" alt="">
+            <img src="img/ojk.png" alt="">
+            <img src="img/lps.png" alt="">
+          </div>
+        </div>
+        
+      </footer>
+    </main>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(() => {
+        function fact(anime_name){
+          return new Promise((resolve, reject)=>{
+            $.ajax({
+              method: "GET",
+              url: "https://anime-facts-rest-api.herokuapp.com/api/v1/" + anime_name
+            }).done((response) => {
+              resolve(response.data)
+            })
+            .fail(error => {
+              reject(error)
+            })
+          })
+        }
+        $.ajax({
+          method: "GET",
+          url: "https://anime-facts-rest-api.herokuapp.com/api/v1"
+        }).done(async(response) => {
+          // console.log(data);
+          for (let x = 0; x < 13; x++) {
+            let fetchFact = await fact(response.data[x].anime_name)
+            //console.log(fetchFact);
+            let isiFact = ""
+            for(let y=0; y<fetchFact.length; y++){
+              isiFact = isiFact + `
+                <div class="modal-body">
+                  ${fetchFact[y].fact}
+                </div>
+              `
+            }
+            //console.log(isiFact);
+          
+            $("#content").append(`
+            <div class="col-4">
+              <div class="card">
+                <div id="img">
+                  <img src="${response.data[x].anime_img}" class="card-img-top" style="height: 300px; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">${response.data[x].anime_name}</h5>
+
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        ${isiFact}
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `);
+          }
+        });
+      });
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
