@@ -1,4 +1,5 @@
 Muhammad Aftabuddin
+Hatta Febriansyah
 Githa Refina
 Eka Prasetyo Ariefin
 Hafidh Almarogi
@@ -6,10 +7,6 @@ Briyan Dwi Angga
 Eka Prasetyo Ariefin
 Efrinaldi
 Dhatu Kertayuga
-<<<<<<< HEAD
 Dina Lolo
 Yudhi Nur Bayu
 Muhammad Rizki Septiawan
-=======
-Yudhi Nur Bayu
->>>>>>> 5e42fc26524365c2ef8b16e97036dfb9f3c4f131
