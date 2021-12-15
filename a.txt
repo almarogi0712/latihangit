@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Hatta Febriansyah
 23
 Suka rebahan
+=======
+Klin Agusta Hernandi Batu
+>>>>>>> klinAgusta
