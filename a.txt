@@ -1,7 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Marilah Pulang Marilah Pulang Bersama-sama
 =======
 Hatta Febriansyah
 23
 Suka rebahan
+>>>>>>> hatta
+=======
+Hatta Febriansyah
+23
+Suka rebahan
+=======
+Klin Agusta Hernandi Batu
+>>>>>>> klinAgusta
 >>>>>>> hatta
