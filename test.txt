@@ -1,14 +1,9 @@
 Muhammad Aftabuddin
-<<<<<<< HEAD
-<<<<<<< HEAD
 Githa Refina
-=======
 Eka Prasetyo Ariefin
->>>>>>> 093dfdac02639440387b2aa8c44f97a5a16b4ca8
-=======
 Hafidh Almarogi
 Briyan Dwi Angga
 Eka Prasetyo Ariefin
 Dhatu Kertayuga
 Dina Lolo
->>>>>>> fedfe168b717b3385ce6eea3d24e675b18af0446
+Yudhi Nur Bayu
