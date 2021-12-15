@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Eka Prasetyo Ariefin (20211101887)
 Hatta Febriansyah
 23
@@ -24,3 +25,6 @@ Demikianlah pidato singkat yang bisa saya sampaikan, mudah-mudahan apa yang suda
 
 Wassalamu'alaikum Wr. Wb.
 >>>>>>> yud
+=======
+briyannn
+>>>>>>> briyannn
